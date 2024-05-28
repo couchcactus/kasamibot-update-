@@ -6961,6 +6961,7 @@ module.exports =
 	            break;
 	        case State.Constructing:
 	            runConstructing(creep);
+				creep.say("🚧", true)
 	            break;
 	        case State.Repairing:
 	            runRepairing(creep);
@@ -7209,7 +7210,7 @@ module.exports =
 	        creep.memory.constructionid = creep.pos.findClosestByRange(importantConstructionSitesInRoom).id;
 	        creep.setState(State.Constructing);
 	        runConstructing(creep);
-	        return;
+			creep.say("🚧",true)
 	    }
 	    let constructionSitesInRoom = expansion.find(FIND_MY_CONSTRUCTION_SITES);
 	    if (constructionSitesInRoom.length > 0) {
@@ -7272,6 +7273,7 @@ module.exports =
 	    }
 	    if (source.energy > 0) {
 	        let responseHarvest = creep.harvest(source);
+			creep.say("⛏️")
 	        if (responseHarvest === OK) {
 	            if (Memory.stats['room.' + creep.memory.target + '.energyHarvested'] === undefined) {
 	                Memory.stats['room.' + creep.memory.target + '.energyHarvested'] = 0;
@@ -7383,6 +7385,7 @@ module.exports =
 	        }
 	    }
 	    let result = creep.build(constructionSite);
+		creep.say("🚧")
 	    if (result === ERR_RCL_NOT_ENOUGH) {
 	        creep.setState(State.Upgrading);
 	        runUpgrading(creep);
@@ -11192,6 +11195,7 @@ module.exports =
 	        }
 	        if (creep.carryCapacity > _.sum(creep.carry)) {
 	            let response = creep.harvest(mineral);
+				creep.say("⛏️")
 	            if (response === OK) {
 	                if (Memory.stats['mineralmined.' + mineral.mineralType] === undefined) {
 	                    Memory.stats['mineralmined.' + mineral.mineralType] = 0;
@@ -15705,6 +15709,7 @@ module.exports =
 	            break;
 	        case State.Constructing:
 	            runConstructing(creep);
+				creep.say("🚧")
 	            break;
 	        case State.Renewing:
 	            runRenewing(creep);
@@ -15732,6 +15737,7 @@ module.exports =
 	        else {
 	            creep.setState(State.Constructing);
 	            runConstructing(creep);
+				creep.say("🚧")
 	        }
 	    }
 	}
@@ -15788,6 +15794,7 @@ module.exports =
 	        if (constructionsites.length > 0) {
 	            creep.setState(State.Constructing);
 	            runConstructing(creep);
+				creep.say("🚧")
 	            return;
 	        }
 	        creep.setState(State.Praising);
@@ -15953,6 +15960,7 @@ module.exports =
 	        if (constructionsites.length > 0) {
 	            creep.setState(State.Constructing);
 	            runConstructing(creep);
+				creep.say("🚧")
 	            return;
 	        }
 	    }
@@ -16008,6 +16016,7 @@ module.exports =
 	        }
 	        else {
 	            creep.build(constructionsite);
+				creep.say("🚧")
 	        }
 	    }
 	    else {
@@ -18482,6 +18491,7 @@ module.exports =
 	            }
 	            else {
 	                creep.build(x.constructionSite);
+					creep.say("🚧")
 	            }
 	            return;
 	        }
@@ -19062,6 +19072,7 @@ module.exports =
 	            break;
 	        case State.Constructing:
 	            runConstructing(creep);
+				creep.say("🚧")
 	            break;
 	        case State.FillingBase:
 	            runFillingBase(creep);
@@ -19223,6 +19234,7 @@ module.exports =
 	        creep.memory.constructionid = creep.pos.findClosestByRange(importantConstructionSitesInRoom).id;
 	        creep.setState(State.Constructing);
 	        runConstructing(creep);
+			creep.say("🚧")
 	        return;
 	    }
 	    let constructionSitesInRoom = creep.room.find(FIND_MY_CONSTRUCTION_SITES);
@@ -19230,6 +19242,7 @@ module.exports =
 	        creep.memory.constructionid = creep.pos.findClosestByRange(constructionSitesInRoom).id;
 	        creep.setState(State.Constructing);
 	        runConstructing(creep);
+			creep.say("🚧")
 	        return;
 	    }
 	    if (creep.room.storage !== undefined && creep.room.storage.isActive()) {
@@ -19277,6 +19290,7 @@ module.exports =
 	                creep.memory.constructionid = creep.pos.findClosestByRange(constructionSitesInRoom).id;
 	                creep.setState(State.Constructing);
 	                runConstructing(creep);
+					creep.say("🚧")
 	                return;
 	            }
 	        }
@@ -19286,6 +19300,7 @@ module.exports =
 	    }
 	    if (source.energy > 0) {
 	        let responseHarvest = creep.harvest(source);
+			creep.say("⛏️")
 	        if (responseHarvest === OK) {
 	            if (Memory.stats['room.' + creep.memory.homeroom + '.energyHarvested'] === undefined) {
 	                Memory.stats['room.' + creep.memory.homeroom + '.energyHarvested'] = 0;
@@ -20410,9 +20425,11 @@ module.exports =
 	            }
 	            if (creep.carry[RESOURCE_ENERGY] > (creep.carryCapacity / 2)) {
 	                creep.build(constrSite);
+					creep.say("🚧")
 	            }
 	            else {
 	                let responseHarvest = creep.harvest(source);
+					creep.say("⛏️")
 	                if (responseHarvest === OK) {
 	                    if (Memory.stats['room.' + creep.memory.homeroom + '.energyHarvested'] === undefined) {
 	                        Memory.stats['room.' + creep.memory.homeroom + '.energyHarvested'] = 0;
@@ -20439,6 +20456,7 @@ module.exports =
 	        }
 	        else if (source.energy > 0 && container.store[RESOURCE_ENERGY] < container.storeCapacity) {
 	            let responseHarvest = creep.harvest(source);
+				creep.say("⛏️")
 	            if (responseHarvest === OK) {
 	                if (Memory.stats['room.' + creep.memory.homeroom + '.energyHarvested'] === undefined) {
 	                    Memory.stats['room.' + creep.memory.homeroom + '.energyHarvested'] = 0;
@@ -20876,6 +20894,7 @@ module.exports =
 	            break;
 	        case State.Constructing:
 	            runConstructing(creep);
+				creep.say("🚧")
 	            break;
 	        case State.Fortify:
 	            runFortify(creep);
@@ -20908,12 +20927,14 @@ module.exports =
 	    if (currentConstructionSite instanceof ConstructionSite) {
 	        creep.setState(State.Constructing);
 	        runConstructing(creep);
+			creep.say("🚧")
 	        return;
 	    }
 	    let targetConstructionSite = findNewTargetConstructionSite(creep);
 	    if (targetConstructionSite !== null) {
 	        creep.setState(State.Constructing);
 	        runConstructing(creep);
+			creep.say("🚧")
 	        return;
 	    }
 	    let targetWallSite = findNewTargetWallSite(creep);
@@ -20945,6 +20966,7 @@ module.exports =
 	        return;
 	    }
 	    let response = creep.build(targetSite);
+		creep.say("🚧")
 	    if (response === ERR_NOT_IN_RANGE) {
 	        creep.travelTo(targetSite);
 	    }
@@ -21324,6 +21346,7 @@ module.exports =
 	        }
 	        else {
 	            creep.build(targetSite);
+				creep.say("🚧")
 	        }
 	    }
 	    else {
@@ -24367,6 +24390,77 @@ module.exports =
 	}
 	exports.Command = Command;
 	exports.command = new Command();
+
+	const rRobber = {
+
+		type: 22 /* BodyType.robber */,
+		/** @param {Creep} creep **/
+		run: function (creep) {
+			const flagName = "steal";
+			const flag = Memory.flags[flagName];
+			if (creep.store.getUsedCapacity() == 0) {
+				if (!flag) {
+					creep.suicide();
+					return;
+				}
+				if (creep.memory.flagDistance && creep.ticksToLive <= creep.memory.flagDistance) {
+					creep.suicide();
+					spawnQueue.respawn(creep);
+					return;
+				}
+				//if creep can't complete round trip suicide and respawn
+			}
+			if (!creep.store.getUsedCapacity() || ((creep.pos.roomName != Game.spawns[creep.memory.city].pos.roomName && creep.store.getFreeCapacity()) && flag)) {
+				//pick up more stuff
+				const flagPos = new RoomPosition(flag.x, flag.y, flag.roomName);
+				if (!creep.memory.flagDistance) {
+					const route = motion.getRoute(Game.spawns[creep.memory.city].pos.roomName, flag.roomName, true);
+					if (route == -2) {
+						creep.memory.flagDistance = 1000;
+						return;
+					}
+					creep.memory.flagDistance = route.length * 50;
+				}
+				if (Game.rooms[flag.roomName]) {
+					if (creep.memory.target) {
+						const target = Game.getObjectById(creep.memory.target);
+						if (!target.store[creep.memory.resource]) {
+							creep.memory.target = null;
+							creep.memory.resource = null;
+						}
+					}
+					if (!creep.memory.target) {
+						const structs = _.filter(flagPos.lookFor(LOOK_STRUCTURES).concat(flagPos.lookFor(LOOK_RUINS)), s => s.store);
+						for (const struct of structs) {
+							const valuables = _.filter(Object.keys(struct.store), k => k != RESOURCE_ENERGY);
+							if (valuables.length) {
+								creep.memory.target = struct.id;
+								creep.memory.resource = valuables[0];
+								break;
+							}
+						}
+					}
+					if (!creep.memory.target) {
+						delete Memory.flags[flagName];
+					}
+					else {
+						actions_1.withdraw(creep, Game.getObjectById(creep.memory.target), creep.memory.resource);
+					}
+				}
+				else {
+					motion.newMove(creep, flagPos, 1);
+				}
+			}
+			else {
+				actions_1.charge(creep, Game.spawns[creep.memory.city].room.storage);
+			}
+		}
+	};
+	var robber = rRobber;
+
+
+
+
 
 
 /***/ })
