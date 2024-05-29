@@ -29,6 +29,19 @@ instead of coding it. As for the users of this bot, i would prefer if people imp
 * Quad functions and spawning
 * Better defense spawning and harasser functions
 * More military units at disposal
+* Improved defense and offense strategy
+* Improved boosting of units
+  'Robbers' to be spawned to steal from enemy rooms
+* Better guarding operations
+
+---
+## Planed Updates
+**1.2, Economic and Base improvements**
+* not planned at the moment, i may add improved CPU tracking for adding more rooms and remote mining.
+
+
+
+  
 
 ---
 ## Roadmap 
