@@ -8417,6 +8417,7 @@ module.exports =
 	    if (bank !== null) {
 	        if (_BankRobbers.itIsSafeToAttackBank(creep, bank)) {
 	            creep.attack(bank);
+				creep.say("🔋")
 	        }
 	    }
 	    else {
@@ -8744,6 +8745,7 @@ module.exports =
 	    if (bank !== null) {
 	        if (_BankRobbers.itIsSafeToAttackBank(creep, bank)) {
 	            creep.rangedAttack(bank);
+				creep.say("(◣_◢)", true)
 	        }
 	    }
 	    else {
@@ -8798,9 +8800,11 @@ module.exports =
 	    if (distance <= 3) {
 	        if (distance === 1) {
 	            creep.rangedMassAttack();
+				creep.say("(◣_◢)", true)
 	        }
 	        else {
 	            creep.rangedAttack(targetEnemy);
+				creep.say("(◣_◢)", true)
 	        }
 	        return true;
 	    }
@@ -8824,10 +8828,12 @@ module.exports =
 	    }
 	    if (targets.length > 1) {
 	        creep.rangedMassAttack();
+			creep.say("(◣_◢)", true)
 	        return true;
 	    }
 	    else if (targets.length === 1) {
 	        creep.rangedAttack(targets[0]);
+			creep.say("(◣_◢)", true)
 	        return true;
 	    }
 	    return false;
@@ -10287,6 +10293,7 @@ module.exports =
 	    let targetEnemy = getTargetEnemy(defender);
 	    if (targetEnemy !== undefined && creep.pos.getRangeTo(targetEnemy) <= 3) {
 	        creep.rangedAttack(targetEnemy);
+			creep.say("(◣_◢)", true)
 	    }
 	    else {
 	        _Military.rangedAttackToEnemiesAround(creep);
@@ -10438,7 +10445,7 @@ module.exports =
 	        creep.travelTo(defender);
 	    }
 	    if (targetEnemy !== undefined && creep.pos.getRangeTo(targetEnemy) === 1) {
-	        creep.say("Yeeha!");
+	        creep.say("(◣_◢)", true);
 	        creep.attack(targetEnemy);
 	    }
 	}
@@ -12019,9 +12026,11 @@ module.exports =
 	            let nearby = creep.pos.findInRange(FIND_HOSTILE_CREEPS, 3);
 	            if (nearby.length > 1) {
 	                creep.rangedMassAttack();
+					creep.say("(◣_◢)", true)
 	            }
 	            else {
 	                creep.rangedAttack(targetKeeper);
+					creep.say("(◣_◢)", true)
 	            }
 	        }
 	        if (range > 1 && healer.fatigue === 0) {
@@ -12032,6 +12041,7 @@ module.exports =
 	        }
 	        else {
 	            creep.attack(targetKeeper);
+				creep.say("(◣_◢)", true)
 	            if (healer.fatigue === 0) {
 	                creep.moveTo(targetKeeper.pos, { ignoreCreeps: true, costCallback: getBorderCallback });
 	                if (creep.pos.getRangeTo(healer) === 1) {
@@ -12248,6 +12258,7 @@ module.exports =
 	            }
 	            if (distance === 1) {
 	                creep.attack(prioritizedTarget);
+					creep.say("(◣_◢)", true)
 	            }
 	            return;
 	        }
@@ -12299,6 +12310,7 @@ module.exports =
 	    }
 	    creep.room.memory.priTarget = enemy.id;
 	    creep.attack(enemy);
+		creep.say("(◣_◢)", true)
 	}
 	function setBoosting(creep) {
 	    let threat = creep.room.memory.threat;
@@ -12450,6 +12462,7 @@ module.exports =
 	    }
 	    if (creep.pos.getRangeTo(enemy) < 4) {
 	        creep.rangedAttack(enemy);
+			creep.say("(◣_◢)", true)
 	    }
 	    else {
 	        shootHostileCreeps(creep);
@@ -12490,6 +12503,7 @@ module.exports =
 	        creep.memory.targetEnemy = enemy.id;
 	    }
 	    creep.rangedAttack(enemy);
+		creep.say("(◣_◢)", true)
 	}
 	function setBoosting(creep) {
 	    let threat = creep.room.memory.threat;
@@ -12517,6 +12531,7 @@ module.exports =
 	    });
 	    if (closeDangerousCreepsNotOnRamparts.length > 0) {
 	        creep.rangedAttack(closeDangerousCreepsNotOnRamparts[0]);
+			creep.say("(◣_◢)", true)
 	    }
 	}
 	function defendersShouldBoost(threat) {
@@ -16910,6 +16925,7 @@ module.exports =
 	        else {
 	            if (range > 1) {
 	                creep.rangedHeal(teammate);
+					creep.say("🚑",true)
 	            }
 	            else {
 	                creep.heal(teammate);
@@ -17142,11 +17158,13 @@ module.exports =
 	    });
 	    if (closeDangerousCreepsNotOnRamparts.length > 0) {
 	        creep.rangedAttack(closeDangerousCreepsNotOnRamparts[0]);
+			creep.say("(◣_◢)", true)
 	    }
 	    else {
 	        let targetToDismantle = Game.getObjectById(creep.memory.targetToDismantle);
 	        if (targetToDismantle instanceof Structure && creep.pos.getRangeTo(targetToDismantle) < 4) {
 	            creep.rangedAttack(targetToDismantle);
+				creep.say("💥", true)
 	        }
 	    }
 	}
@@ -17557,11 +17575,13 @@ module.exports =
 	    });
 	    if (closeDangerousCreepsNotOnRamparts.length > 0) {
 	        creep.rangedAttack(closeDangerousCreepsNotOnRamparts[0]);
+			creep.say("(◣_◢)", true)
 	    }
 	    else {
 	        let targetToDismantle = Game.getObjectById(creep.memory.targetToDismantle);
 	        if (targetToDismantle instanceof Structure && creep.pos.getRangeTo(targetToDismantle) < 4) {
 	            creep.rangedAttack(targetToDismantle);
+				creep.say("💥", true)
 	        }
 	    }
 	}
@@ -17759,6 +17779,7 @@ module.exports =
 	    let range = creep.pos.getRangeTo(targetToAttack);
 	    if (range === 1) {
 	        creep.rangedAttack(targetToAttack);
+			creep.say("(◣_◢)", true)
 	    }
 	    if (range > 1) {
 	        let response = creep.moveTo(targetToAttack);
@@ -17958,6 +17979,7 @@ module.exports =
 	    let range = creep.pos.getRangeTo(targetToAttack);
 	    if (range === 1) {
 	        creep.attack(targetToAttack);
+			creep.say("(◣_◢)", true)
 	        creep.moveTo(targetToAttack, { ignoreCreeps: true, maxRooms: 1 });
 	    }
 	    if (range > 1) {
@@ -18163,6 +18185,7 @@ module.exports =
 	    let range = creep.pos.getRangeTo(targetToAttack);
 	    if (range === 1) {
 	        creep.attack(targetToAttack);
+			creep.say("(◣_◢)", true)
 	    }
 	    if (range > 1) {
 	        let response = creep.moveTo(targetToAttack);
@@ -22627,6 +22650,7 @@ module.exports =
 	    }
 	    else {
 	        creep.attack(keeper);
+			creep.say("(◣_◢)", true)
 	        creep.moveTo(keeper, { ignoreCreeps: true, maxRooms: 1 });
 	    }
 	}
@@ -25003,29 +25027,34 @@ module.exports =
 					if (_.find(hostiles, h => h.pos.isNearTo(creep.pos))
 						|| _.find(roomName.structures, s => s instanceof OwnedStructure && s.hits && s.pos.isNearTo(creep.pos))) {
 						creep.rangedMassAttack();
+						creep.say("(◣_◢)", true)
 						creepUtils.logDamage(creep, creep.pos, true);
 						continue;
 					}
 					const targetInRange = target && target.pos.inRangeTo(creep.pos, 3);
 					if (targetInRange && !(target instanceof Structure) && !rQ.isUnderRampart(target)) {
 						creep.rangedAttack(target);
+						creep.say("(◣_◢)", true)
 						creepUtils.logDamage(creep, target.pos);
 						continue;
 					}
 					const newTarget = _.find(hostiles, h => h.pos.inRangeTo(creep.pos, 3));
 					if (newTarget) {
 						creep.rangedAttack(newTarget);
+						creep.say("(◣_◢)", true)
 						creepUtils.logDamage(creep, newTarget.pos);
 						continue;
 					}
 					if (targetInRange && target instanceof Structure) {
 						creep.rangedAttack(target);
+						creep.say("(◣_◢)", true)
 						creepUtils.logDamage(creep, target.pos);
 						continue;
 					}
 					const structureTarget = _.find(roomName.structures, h => h.pos.inRangeTo(creep.pos, 3));
 					if (structureTarget) {
 						creep.rangedAttack(structureTarget);
+						creep.say("(◣_◢)", true)
 						creepUtils.logDamage(creep, structureTarget.pos);
 					}
 				}
