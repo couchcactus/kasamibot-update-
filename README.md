@@ -22,7 +22,15 @@ instead of coding it. As for the users of this bot, i would prefer if people imp
 
 ---
 
+## Next Update
+**1.1 Modern Update and combat overhaul**
 
+* Change of old screeps features to newer ones
+* Quad functions and spawning
+* Better defense spawning and harasser functions
+* More military units at disposal
+
+---
 ## Roadmap 
 ~~Creep.say functions~~
 * Use Observers for scouting when reacing RCL 8
