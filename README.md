@@ -14,20 +14,20 @@ Read more about KasamiBot on the Github pages:
 Screeps is an open source MMO RTS game for programmers, where your mission is to code an AI. There is an official server hosted by the developers, and there are multiple open private servers. You can also run a server locally. To learn more, [visit screeps.com](https://screeps.com/) or [the steam page](http://store.steampowered.com/app/464350/Screeps/).
 
 ## What is this?
-This is my personal screeps bot i will be using, forked from KasamiBot. This bot will be updated and improved compared to the original KasamiBot
+This is my personal screeps bot i will be using, forked from KasamiBot. This bot will be updated and improved compared to the original KasamiBot with modern Screeps features and improved code.
 
 ## Are you an NCP for using this?
 For myself, i have updated this bot and changed its feautures, which most people consider the line of completely stealing code
-instead of coding it. As for the users of this bot, i would prefer if people improved and rewrote this bot instead of using it permenantly 
+instead of coding it. As for the users of this bot, i would prefer if people improved and rewrote this bot instead of using it permenantly in its unmodified version.
 
 ---
 
 
-## Roadmap
-* Functions for creeps saying things
+## Roadmap 
+~~Creep.say functions~~
 * Use Observers for scouting when reacing RCL 8
 * Faster and consistent boosting of units
-* Better response for invaders in portal room
+* Better response for invaders™ in portal room
 * More efficient wallbuilding, by splitting it up to repairers and haulers
 * Pillage enemy rooms by stealing valuable resources
 * Better operation for guarding wanted outposts
