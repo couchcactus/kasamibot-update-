@@ -26,12 +26,12 @@ instead of coding it. As for the users of this bot, i would prefer if people imp
 **1.1 Modern Update and combat overhaul**
 
 * Change of old screeps features to newer ones
-* Quad functions and spawning
+* ~~Quad functions~~ and spawning
 * Better defense spawning and harasser functions
 * More military units at disposal
 * Improved defense and offense strategy
 * Improved boosting of units
-  'Robbers' to be spawned to steal from enemy rooms
+ * 'Robbers' to be spawned to steal from enemy rooms
 * Better guarding operations
 
 ---
