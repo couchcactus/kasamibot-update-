@@ -36,10 +36,11 @@ instead of coding it. As for the users of this bot, i would prefer if people imp
 
 ---
 ## Planed Updates
-**1.2, Economic and Base improvements**
+**1.2 Economic and Base improvements**
 * not planned at the moment, i may add improved CPU tracking for adding more rooms and remote mining.
 
-
+**1.3, Destruction and combat update** 
+* this will be a fun update, but very controversial due to views on OS bots
 
   
 
