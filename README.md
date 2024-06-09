@@ -37,10 +37,20 @@ instead of coding it. As for the users of this bot, i would prefer if people imp
 ---
 ## Planed Updates
 **1.2 Economic and Base improvements**
-* not planned at the moment, i may add improved CPU tracking for adding more rooms and remote mining.
+* Improved CPU tracking to add more remotes to rooms
+* Removal of old wall/rampart placing to be remade with more compact designs
+* New base design (no plans for it yet)!!!
+* Boosting of upgraders when energy is low
+* Overfitting of Miners to save CPU
+  
 
 **1.3, Destruction and combat update** 
-* this will be a fun update, but very controversial due to views on OS bots
+* (maybe killzones, i doubt i will add them though)
+* Blinky's to be spawned to harass remotes/rooms
+* Diplomacy manager
+* Breaker quads for dismantling of rooms/ruins
+* Prolonged sieges
+  
 
   
 
